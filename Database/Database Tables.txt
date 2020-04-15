@@ -1,0 +1,94 @@
+CREATE TABLE tblConsultants(
+    -> ConsultantID INT NOT NULL AUTO_INCREMENT,
+    -> Name VARCHAR(45) NOT NULL,
+    -> Password VARCHAR(25) NOT NULL;
+    -> Rank VARCHAR(45) NOT NULL,
+    -> PRIMARY KEY(ConsultantID),
+    -> INDEX(Name)
+    -> );
+
+CREATE TABLE tblSubscriptions(
+    -> SubscriptionID INT NOT NULL AUTO_INCREMENT,
+    -> Name VARCHAR(45) NOT NULL,
+    -> ContactNumber VARCHAR(10) NOT NULL,
+    -> Address VARCHAR(255) NOT NULL,
+    -> DOB DATE NOT NULL,
+    -> Sex VARCHAR(6) NOT NULL,
+    -> Password VARCHAR(55) NOT NULL,
+    -> NextOfKin VARCHAR(45),
+    -> Membership VARCHAR(25),
+    -> HasTrainer VARCHAR(3),
+    -> TrainingTime VARCHAR(15),
+    -> PRIMARY KEY(SubscriptionID),
+    -> INDEX(Name)
+    -> );
+
+CREATE TABLE tblMembers(
+    -> MemberID INT NOT NULL AUTO_INCREMENT,
+    -> Name VARCHAR(45) NOT NULL,
+    -> ContactNumber VARCHAR(10) NOT NULL,
+    -> Address VARCHAR(255) NOT NULL,
+    -> DOB DATE NOT NULL,
+    -> Sex VARCHAR(6) NOT NULL,
+    -> Password VARCHAR(55) NOT NULL,
+    -> NextOfKin VARCHAR(45),
+    -> Membership VARCHAR(25),
+    -> HasTrainer VARCHAR(3),
+    -> TrainingTime VARCHAR(15),
+    -> SubscriptionID INT NOT NULL UNIQUE,
+    -> ConsultantID INT NOT NULL,
+    -> PRIMARY KEY(MemberID),
+    -> INDEX(Name),
+    -> CONSTRAINT MemberSubscription
+    -> FOREIGN KEY(SubscriptionID) REFERENCES tblSubscriptions(SubscriptionID),
+    -> CONSTRAINT MemberApprovedBy
+    -> FOREIGN KEY(ConsultantID) REFERENCES tblConsultants(ConsultantID)
+    -> );
+
+CREATE TABLE tblAnnouncements(
+    -> AnnouncementID INT NOT NULL AUTO_INCREMENT,
+    -> Time VARCHAR(255) NOT NULL,
+    -> TextAnnouncement VARCHAR(4096),
+    -> AudioAnnouncement VARCHAR(255),
+    -> ImageAnnouncement VARCHAR(255),
+    -> VideoAnnouncement VARCHAR(255),
+    -> ConsultantID INT NOT NULL,
+    -> PRIMARY KEY(AnnouncementID),
+    -> CONSTRAINT AnnouncementPostedBy
+    -> FOREIGN KEY(ConsultantID) REFERENCES tblConsultants(ConsultantID)
+    -> );
+
+CREATE TABLE tblWeeklyEvents(
+    -> EventID INT NOT NULL AUTO_INCREMENT,
+    -> EventName VARCHAR(255) NOT NULL,
+    -> EventDate DATE NOT NULL,
+    -> EventTime VARCHAR(15),
+    -> MemberID INT NOT NULL,
+    -> PRIMARY KEY(EventID),
+    -> CONSTRAINT EventBy
+    -> FOREIGN KEY(MemberID) REFERENCES tblMembers(MemberID)
+    -> );
+
+CREATE TABLE tblannouncements (
+
+AnnouncementID int(11) NOT NULL AUTO_INCREMENT,
+
+Time varchar(255) NOT NULL,
+
+TextAnnouncement varchar(4096) DEFAULT NULL,
+
+AudioAnnouncement varchar(255) DEFAULT NULL,
+
+ImageAnnouncement varchar(255) DEFAULT NULL,
+
+VideoAnnouncement varchar(255) DEFAULT NULL,
+
+ConsultantID int(11) NOT NULL,
+
+PRIMARY KEY (AnnouncementID),
+
+CONSTRAINT AnnouncementPostedBy
+
+FOREIGN KEY (ConsultantID) REFERENCES tblconsultants (ConsultantID)
+
+);
