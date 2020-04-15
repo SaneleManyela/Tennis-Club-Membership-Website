@@ -1,0 +1,143 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28 Oct 2019, 1:24:51 PM
+    Author     : Sanele
+*/
+/*Font style for the rest of the application*/
+*{
+    font-family: verdana,sans-serif;
+    font-size: 14pt;
+}
+#TextAnnouncementStyle{
+  padding: 8px;
+  box-shadow:8px 12px 8px -4px black;  
+}
+#AnnouncementTypeface{
+    font-family: helvetica,sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
+}
+/*Style for all HTML Body tag of the site*/
+body{
+    width: 1000px;
+    margin: 10px auto;
+    background: rgb(153, 255, 255);
+    border: 4px solid #888;
+}
+html{
+    background: rgb(0, 0, 0);
+}
+img{
+    border: 1px solid black;
+    margin: 15px;
+    -moz-box-shadow: 2px 2px 2px #888;
+    -webkit-box-shadow: 2px 2px 2px #888;
+    box-shadow: 2px 2px 2px #888;
+}
+.username{
+    text-align: center;
+    background: #eb8;
+    color: #40d;
+    font-family: helvetica;
+    font-size: 20pt;
+    padding: 4px;
+}
+/*Style for all information texts*/
+.info{
+    font-family: helvetica;
+    font-size: 20pt;
+    color: black;
+    margin: 40px 0px;
+    text-align: center;
+}
+/*Style for aligning elements*/
+.center{
+    text-align: center;
+}
+/*Syle for errors*/
+.error{
+    color: red;
+}
+/*Style for the update details form*/
+updateDetails{
+    border:1px solid #999999;
+}
+/*Style for site the logo in the header*/
+#logo{
+    font-family: Georgia;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 60px;
+    color: black;
+}
+/*Style for the tennis image*/
+#tennis{
+    position: relative;
+    border: 0px;
+    margin-left: -300px;
+    margin-right: 20px;
+    top: 5px;
+    -moz-box-shadow: 0px 0px 0px;
+    -webkit-box-shadow: 0px 0px 0px;
+    box-shadow: 0px 0px 0px;
+}
+/*Style for all submit type input elements*/
+[type='submit']{
+    width: 300px;
+    font-family: helvetica;
+    font-weight: bold;
+    height: 40px;
+}
+/*This style rule changes the colour of an 
+ *input element to #4CAF50 when a user hovers
+ *over it
+*/
+[type='submit']:hover{
+    background-color: #4CAF50;
+}
+/*This styles all labels*/
+label{
+    font-family: helvetica;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #4CAF50 on hover */
+li a:hover {
+  background-color: #4CAF50;
+}
+/*Styles all the pages headings*/
+#heading{
+    padding: 18px;
+    background: #eb8;
+    font-size: 16pt;
+    font-weight: bold;
+}
+/*Styles dimensions of input, select snd textarea elements*/
+input, select, textarea{
+    width: 300px;
+    height: 40px;
+}
